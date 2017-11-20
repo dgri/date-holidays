@@ -33,6 +33,20 @@ module.exports = {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: '#source-map',
+      minimize: true,
+      compress: {
+        warnings: false,
+        pure_getters: true,
+        unsafe: true,
+        unsafe_comps: true,
+        screw_ie8: true
+      },
+      output: {
+        comments: false
+      }
     })
   ],
   devtool: '#source-map'
