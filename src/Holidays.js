@@ -5,7 +5,7 @@
 
 'use strict'
 
-const Parser = require('./date-holidays-parser/Parser')
+const Parser = require('./date-holidays-parser')
 const data = require('../data/holidays.json')
 
 /**
@@ -28,9 +28,8 @@ function Holidays (country, state, region, opts) {
   if (!(this instanceof Holidays)) {
     return new Holidays(country, state, region, opts)
   }
-  // Parser.apply(this, [data, country, state, region, opts])
-  // this.init(country, state, region, opts)
-  return new Parser([data, country, state, region, opts])
+  Parser.apply(this, [data, country, state, region, opts])
+  this.init(country, state, region, opts)
 }
 
 Holidays.prototype = Object.create(Parser.prototype)

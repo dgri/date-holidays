@@ -1,6 +1,6 @@
 'use strict'
 
-const CalChinese = require('date-chinese')
+const CalChinese = require('../date-chinese')
 const CalEvent = require('./CalEvent')
 const CalDate = require('caldate')
 
