@@ -20,7 +20,7 @@
     "Lukas Eipert <git@leipert.io>",
     "David Álvarez Navarro <david16an@gmail.com>"
   ],
-  "main": "lib",
+  "main": "build/index.js",
   "module": "src",
   "jsnext:main": "src",
   "bin": {
@@ -35,6 +35,7 @@
     "url": "git+https://github.com/commenthol/date-holidays.git"
   },
   "scripts": {
+    "build": "webpack",
     "all": "npm run clean && npm i && npm run lint && npm run transpile && npm run yaml && npm test && npm pack",
     "clean": "rimraf lib node_modules",
     "lint": "eslint '**/*.js'",
@@ -65,7 +66,12 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.23.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.23.0",
     "babelify": "^8.0.0",
     "core-js": "^2.5.0",
@@ -78,7 +84,11 @@
     "hashtree": "^0.7.0",
     "mocha": "^4.0.1",
     "rimraf": "^2.5.4",
-    "serialize-to-js": "^1.0.0"
+    "serialize-to-js": "^1.0.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.20.0",
+    "webpack-merge": "^4.1.1"
   },
   "engines": {
     "node": ">=4.0.0"
