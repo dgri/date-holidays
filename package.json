@@ -21,8 +21,8 @@
     "David Álvarez Navarro <david16an@gmail.com>"
   ],
   "main": "lib",
-  "module": "src",
-  "jsnext:main": "src",
+  "module": "lib",
+  "jsnext:main": "lib",
   "bin": {
     "holidays2json": "./scripts/holidays2json.js"
   },
